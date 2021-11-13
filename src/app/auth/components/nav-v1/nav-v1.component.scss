@@ -1,0 +1,36 @@
+nav {
+    background-color: #fff;
+    border-bottom: 2px solid rgb(2, 120, 174, .490);
+
+    a {
+        color: #e8654a;
+        font-family: 'Fredoka One', cursive;
+
+        span {
+            color: #0278ae;
+        }
+    }
+
+    button {
+        color: #e8654a;
+        outline: none;
+    }
+
+    div {
+
+        a {
+            cursor: pointer;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        a:nth-child(1) {
+            color: #0278ae;
+            background-color: rgb(74, 182, 232, .300);
+        }
+
+        a:nth-child(2) {
+            color: #fff;
+            background-color: #0278ae;
+        }
+    }
+}

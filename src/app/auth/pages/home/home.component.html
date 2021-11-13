@@ -1,0 +1,58 @@
+<app-nav-v1></app-nav-v1>
+
+
+<section class="seccion-1 animated fadeIn" [ngClass]="darkMode_bg2">
+    
+    <div class="row row-cols-12">
+
+        <div class="contenedor p-5">
+            
+            <div class="textos col-md-6">
+                <div class="mb-4">
+                    <h1>Express <span>Notes</span></h1>
+                </div>
+                <div class="mb-3">
+                    <p [ngClass]="darkMode_txt">Es un nuevo sistema de publicación de calificaciones escolares, creado para facilitar tales entregas en estos tiempos de pandemia.</p>
+                </div>
+                <div>
+                    <a routerLink="/create" class="btn px-3 hvr-grow-shadow">Regístrate ahora</a>
+                </div>
+            </div>
+
+            <div class="imagen col-md-4">
+                <img loading="lazy" src="https://res.cloudinary.com/dqvcp9dby/image/upload/v1617714251/mundo_z2o6tf.png" alt="">
+            </div>
+
+        </div>
+        
+    </div>
+
+</section>
+
+<section class="seccion-2" [ngClass]="darkMode_bg2">
+    
+    <div class="row row-cols-12">
+
+        <div class="contenedor">
+            
+            <div class="textos col-md-5">
+                <div class="mb-4">
+                    <h2>¿Por qué deberías usar <span>express notes</span>?</h2>
+                </div>
+                <div class="mb-3">
+                    <p [ngClass]="darkMode_txt">Express Notes es una aplicación web fácil de usar que le brinda la oportunidad de facilitar el envío de calificaciones a sus estudiantes de forma segura y gratuita.</p>
+                </div>
+            </div>
+
+            <div class="imagen col-md-5">
+                <img loading="lazy" src="https://res.cloudinary.com/dqvcp9dby/image/upload/v1617714251/mundo2_pukkj6.png" alt="">
+            </div>
+
+        </div>
+        
+    </div>
+
+</section>
+
+
+<app-footer></app-footer>

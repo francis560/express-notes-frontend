@@ -1,0 +1,33 @@
+<app-nav-v4></app-nav-v4>
+
+<div class="container py-2">
+
+    <div class="my-4 regresar text-center">
+        <a (click)="regresar()" class="hvr-icon-back"><i class="fas fa-arrow-left hvr-icon mr-2"></i>Regresar al grupo</a>
+    </div>
+
+    <div class="contenedor-tabla" id="myTable">
+      <table class="table table-bordered">
+  
+          <thead>
+            <tr>
+              <th scope="col">Materias</th>
+              <th *ngFor="let l of notas[0]?.meses;" scope="col">{{ l }}</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let i of notas;">
+              <th scope="row">{{ i.materias.materias }}</th>
+              <td *ngFor="let j of i.nota;">{{ j }}</td>
+            </tr>
+          </tbody>
+  
+      </table>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center my-5">
+      <button class="btn px-5 py-3 send" (click)="downloadNote()"><i class="fas fa-download mr-2"></i>Descargar Nota</button>
+    </div>
+
+</div>

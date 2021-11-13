@@ -1,0 +1,40 @@
+<footer [ngClass]="darkMode_bg">
+
+    <div class="row row-cols-12">
+
+        <div class="contenedor p-3">
+    
+            <div class="info-footer p-3 col-sm-12 col-md-5">
+                <div>
+                    <p>Express <span>Notes</span></p>
+                </div>
+                <div>
+                    <p [ngClass]="darkMode_txt">Es un nuevo sistema de publicación de calificaciones escolares, creado para facilitar tales entregas en estos tiempos de pandemia.</p>
+                </div>
+            </div>
+    
+            <div class="social-footer p-3 col-sm-12 col-md-3">
+                <div>
+                    <p>Redes Sociales</p>
+                </div>
+                <div>
+                    <a [ngClass]="darkMode_txt" href="https://www.facebook.com" target="_blank" class="mr-3"><i class="fab fa-facebook-f"></i></a>
+                    <a [ngClass]="darkMode_txt" href="https://www.instagram.com" target="_blank" class="mr-3"><i class="fab fa-instagram"></i></a>
+                    <a [ngClass]="darkMode_txt" href="https://www.twitter.com" target="_blank" class="mr-3"><i class="fab fa-twitter"></i></a>
+                    <a [ngClass]="darkMode_txt" href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+
+    <div class="copy mt-3">
+        <div>
+            <a [ngClass]="darkMode_txt" href="" class="mx-2">Donaciones</a>
+            <a [ngClass]="darkMode_txt" routerLink="/privacy-policy" class="mx-2">Política de privacidad</a>
+            <p [ngClass]="darkMode_txt" class="mx-2">Express Notes <i class="far fa-copyright"></i> 2020</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,168 @@
+.seccion-1 {
+    overflow-x: hidden;
+
+    .row {
+
+        .contenedor {
+            display: flex;
+            justify-content: space-around;
+
+            .textos {
+                margin: auto 0;
+
+                div:nth-child(1) {
+                    font-family: 'Fredoka One', cursive;
+
+                    h1 {
+                        color: #0278ae;
+                        font-size: 60px;
+                    }
+
+                    span {
+                        color: #e8654a;
+                    }
+
+                    @media (max-width: 944px) {
+                        h1 {
+                            font-size: 50px;
+                        }
+                    }
+                }
+
+                div:nth-child(2) {
+
+                    p {
+                        color: rgb(0, 0, 0, .780);
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 20px;
+                    }
+                }
+
+                div:nth-child(3) {
+
+                    a {
+                        cursor: pointer;
+                        color: #fff;
+                        font-family: 'Fredoka One', cursive;
+                        background-color: #e8654a;
+                    }
+                }
+            }
+
+            .imagen {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width: 808px) {
+            .contenedor {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .textos {
+                    text-align: center;
+                    margin-bottom: 10vh;
+                }
+            }
+        }
+    }
+}
+
+.hvr-grow-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.hvr-grow-shadow:hover {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.233);
+}
+
+.seccion-2 {
+    overflow-x: hidden;
+    padding-top: 10vh;
+
+    .row {
+
+
+        .contenedor {
+            display: flex;
+
+            .textos {
+                margin: 0 auto;
+
+                div:nth-child(1) {
+                    font-family: 'Fredoka One', cursive;
+
+                    h2 {
+                        color: #0278ae;
+                        font-size: 45px;
+                    }
+
+                    span {
+                        color: #e8654a;
+                    }
+                }
+
+                div:nth-child(2) {
+
+                    p {
+                        color: rgb(0, 0, 0, .780);
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .imagen {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width: 1060px) {
+
+            .contenedor {
+                flex-direction: column;
+                
+                .textos {
+                    width: 100% !important;
+
+                    div {
+                        text-align: center;
+                        padding: 6px;
+
+                        h2 {
+                            font-size: 35px !important;
+                        }
+                    }
+                }
+
+                .imagen {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

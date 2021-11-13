@@ -1,0 +1,183 @@
+section {
+    overflow-x: hidden;
+    height: 90vh;
+
+    .contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Fredoka One', cursive;
+
+        div:nth-child(1) {
+
+            a {
+                color: #0278ae;
+                font-family: 'Fredoka One', cursive;
+                text-decoration: none;
+            }
+        }
+
+        .select {
+
+            p {
+                color: #0278ae;
+                font-size: 35px;
+            }
+        }
+
+        .opcion-1 {
+            display: flex;
+            background-color: #e8654a;
+            border-radius: 10px;
+            width: 550px;
+            cursor: pointer;
+
+            .teacher-icon {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.267);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+                i {
+                    font-size: 35px;
+                    color: #fff;
+                }
+            }
+
+            .data-account {
+
+                .titulo {
+
+                    p {
+                        color: #fff;
+                    }
+                }
+
+                .descripcion {
+
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        color: rgba(255, 255, 255, 0.705);
+                    }
+                }
+            }
+        }
+
+        .opcion-2 {
+            display: flex;
+            background-color: #e8654a;
+            border-radius: 10px;
+            width: 550px;
+            cursor: pointer;
+
+            .student-icon {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.267);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+                i {
+                    font-size: 35px;
+                    color: #fff;
+                }
+            }
+
+            .data-account {
+
+                .titulo {
+
+                    p {
+                        color: #fff;
+                    }
+                }
+
+                .descripcion {
+
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        color: rgba(255, 255, 255, 0.705);
+                    }
+                }
+            }
+        }
+
+
+        @media (max-width: 610px) {
+
+            .select {
+                text-align: center;
+                padding: 5px;
+                
+                p {
+                    font-size: 28px;
+                }
+            }
+
+            .opcion-1, .opcion-2 {
+                width: 90%;
+                
+
+                .teacher-icon, .student-icon {
+                    margin: auto 24px auto 0 !important;
+                    width: 80px;
+                    height: 80px;
+                    min-width: 80px !important;
+                }
+
+                .data-account {
+
+                    .titulo {
+    
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+    
+                    .descripcion {
+    
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+    .hvr-icon-back {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.1s;
+        transition-duration: 0.1s;
+    }
+    .hvr-icon-back .hvr-icon {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-transition-duration: 0.1s;
+        transition-duration: 0.1s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    .hvr-icon-back:hover .hvr-icon, .hvr-icon-back:focus .hvr-icon, .hvr-icon-back:active .hvr-icon {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+nav {
+    background-color: #fff;
+    border-bottom: 2px solid rgb(2, 120, 174, .490);
+    justify-content: space-between;
+
+    a {
+        color: #e8654a;
+        font-family: 'Fredoka One', cursive;
+
+        span {
+            color: #0278ae;
+        }
+    }
+
+    div {
+
+        a {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            i {
+                color: #e8654a;
+            }
+        }
+
+        .dropdown-menu {
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.103);
+            backdrop-filter: blur( 8.5px );
+            -webkit-backdrop-filter: blur( 8.5px );
+            border: none;
+            border-radius: 5px;
+
+            .dropdown-item {
+                font-family: 'Open Sans', sans-serif;
+                cursor: pointer;
+                color: #393e46;
+            }  
+            
+            .dropdown-item:active {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.modal-dialog {
+    max-width: 600px !important;
+
+    .modal-content {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        
+    
+        .avatar-view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 20px;
+            //width: 60px;
+            padding: 20px 0px;
+            margin: 0 auto;
+        }
+        
+        .selector {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            overflow-x: auto;
+            margin: 35px 0;
+    
+            button {
+                margin: 0px 7px;
+            }
+        }
+          
+    }
+}

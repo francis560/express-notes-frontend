@@ -1,0 +1,12 @@
+<nav class="navbar sticky-top navbar-expand-lg py-3 px-4" [ngClass]="darkMode_bg">
+    <a class="navbar-brand" routerLink="/home">Express <span>Notes</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a routerLink="/signin" class="nav-link btn px-3 my-2 mx-2 hvr-icon-back"><i class="hvr-icon fas fa-sign-in-alt mr-2"></i>Iniciar sesión</a>
+            <a routerLink="/create" class="nav-link btn px-3 my-2 mx-2 hvr-icon-back"><i class="hvr-icon fas fa-edit mr-2"></i>Registrarse</a>
+        </div>
+    </div>
+</nav>

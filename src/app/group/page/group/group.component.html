@@ -1,0 +1,172 @@
+<app-nav-v4></app-nav-v4>
+
+
+<div class="contenedor animated fadeIn d-flex justify-content-center align-items-center flex-column" [ngClass]="darkMode_bg2">
+
+    <div class="d-flex flex-column">
+
+        <div class="header px-5 py-4" [ngClass]="headerBgColor">
+
+            <div class="d-flex flex-column mb-4">
+                <div class="d-flex">
+                    <p class="titulo">{{ groupName }}</p>
+                    <div>
+                        <div class="dropleft">
+                            <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a routerLink="/" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Salir del grupo</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#bgColorGroup"><i class="fas fa-palette mr-2"></i>Editar colores del grupo</a>
+            
+                                <ng-container *ngIf="permisos && idUser == adminGroup">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#co-profesor"><i class="fas fa-user-plus mr-2"></i>Añadir un asistente</a>
+                                </ng-container>
+                                
+                                <a class="dropdown-item" routerLink="/dashboard/{{ groupCode }}"><i class="fas fa-columns mr-2"></i>Dashboard</a>
+
+                                <a class="dropdown-item" (click)="inviteMembers()" data-toggle="modal" data-target="#inviteMembers"><i class="fas fa-copy mr-2"></i>Invitar miembros</a>
+
+                                <ng-container *ngIf="permisos && idUser == adminGroup || permisos && idUser == coProfesorName">
+                                    <a class="dropdown-item" (click)="createNote = !createNote"><i class="fas fa-folder-plus mr-2"></i>Crear notas</a>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="materias">
+                    <p><span>Materias:</span> {{ materias }}</p>
+                </div>
+            </div>
+
+            <div class="group-code mb-2">
+                <button (click)="animateCopy()" (click)="copyGroupCode()" id="code" [ngClass]="botonCodeAnimate">{{ groupCode }}<i class="ml-2 far fa-copy"></i></button>
+            </div>
+
+        </div>
+        
+
+        <div class="group-nav mt-5 d-flex flex-row align-items-center justify-content-center">
+            <div>
+                <button [ngClass]="classActiveMembers" (click)="viewMembers()"><i class="fas fa-users mr-2"></i>Miembros</button>
+                <button [ngClass]="classActiveNotes" (click)="viewNotes()"><i class="far fa-sticky-note mr-2"></i>Notas</button>
+            </div>
+        </div>
+
+        <app-view-notes class="fadeIn animated" [groupId]="groupId" [groupCode]="groupCode" [permisos]="permisos" [idUser]="idUser" [adminGroup]="adminGroup" *ngIf="viewShowNotes"></app-view-notes>
+        
+    </div>
+    
+    <div class="d-flex justify-content-center align-items-center">
+        <app-group-members [groupId]="groupId" style="width: 100%;" *ngIf="viewShowMembers"></app-group-members>
+    </div>
+    
+    <div class="modal fade" id="bgColorGroup" tabindex="-1" aria-labelledby="bgColorGroup" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body my-4 ">
+            <div class="text-center">
+                <h2 style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Personalizar</h2>
+            </div>
+            <div class="mt-5 px-4">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div>
+                        <p style="font-size: 16px; font-family: 'Open Sans', sans-serif;">Seleccione el color del grupo</p>
+                    </div>
+                    <div class="mx-4 d-flex p-2" style="overflow-x: auto; background-color: rgba(89, 89, 89, 0.050);">
+                        <button (click)="groupBgColor(item.color)" *ngFor="let item of groupColor;" style="border: none; width: 35px; height: 35px; border-radius: 5px; min-width: 35px;" [ngClass]="item.btn"></button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p style="font-size: 16px; font-family: 'Open Sans', sans-serif;">Degradados</p>
+                    </div>
+                    <div class="mx-4 d-flex p-2" style="overflow-x: auto; background-color: rgba(89, 89, 89, 0.050);">
+                        <button (click)="groupBgColor(item.color)" *ngFor="let item of groupColorGradient;" style="border: none; width: 35px; height: 35px; border-radius: 5px; min-width: 35px;" [ngClass]="item.btn"></button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade co-profesor" id="co-profesor" tabindex="-1" aria-labelledby="co-profesor" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body my-4 ">
+              <div class="text-center">
+                  <h2 style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Selecciona un asistente</h2>
+              </div>
+              <div class="mt-5 px-3">
+                  <div class="d-flex flex-row flex-wrap">
+
+
+                    <ng-container *ngFor="let i of users">
+
+                        <div *ngIf="i.permisos && i._id !== idUser" class="my-2 mx-auto">
+    
+                            <div class="profesor-card">
+    
+                                <button (click)="coProfesor(i._id)" class="btn px-5">{{ i.username }}</button>
+    
+                            </div>
+    
+                        </div>
+
+                    </ng-container>
+
+                    
+
+                  </div>
+              </div>
+
+              <ng-container *ngFor="let j of users">
+
+                  <div *ngIf="coProfesorName == j._id" class="p-3 mt-5">
+    
+                      <div class="text-center">
+                            <p style="font-family: 'Fredoka One', cursive; font-size: 20px; color: #595959;" class="my-3">Asistente actual</p>
+                      </div>
+
+                      <div class="text-center p-2" style="background-color: rgba(89, 89, 89, 0.050);">
+                            <button (click)="deleteCoProfesor()" style="font-family: 'Fredoka One', cursive" class="btn btn-danger px-4">{{ j.username }}<i class="fas fa-times ml-3"></i></button>
+                      </div>
+    
+                  </div>
+
+              </ng-container>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <div class="modal fade inviteMembers" id="inviteMembers" tabindex="-1" aria-labelledby="bgColorGroup" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body my-4 ">
+              <div class="text-center">
+                  <h2 style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Código de invitación</h2>
+              </div>
+              <div class="mt-5 px-4">
+                  <div>
+
+                      <div class="text-center p-2 inviteCode">
+
+                          <p>https://express-notes.vercel.app/group/{{ groupCode }}</p>
+
+                      </div>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <ng-container *ngIf="createNote">
+        <app-create-note (hide)="regresar()" [groupId]="groupId" class="fadeIn animated" style="position: fixed; left: 0; top: 0; width: 100%; height: 100vh; z-index: 1000; background-color: #fff; overflow-y: auto;"></app-create-note>
+    </ng-container>
+</div>

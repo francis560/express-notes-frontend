@@ -1,0 +1,74 @@
+.contenedor {
+
+    .cards-info {
+        display: flex;
+        justify-content: space-around;
+
+        .cards {
+            width: 25%;
+            background-color: #e8654a;
+            color: #fff;
+            font-family: 'Fredoka One', cursive;
+            border-radius: 10px;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                p {
+                    font-size: 28px;
+                    margin: auto 0;
+                }
+
+                i {
+                    font-size: 28px;
+                }
+            }
+            
+
+            span {
+                color: rgba(255, 255, 255, 0.678);
+            }
+        }
+    }
+
+    .data-table {
+        margin: 20px 0 0 0;
+        
+        table {
+
+            thead {
+                background-color: #e8654a;
+                color: #fff;
+
+                th {
+                    border-bottom: none;
+                    border-top: none;
+                    padding: 15px 30px;
+                }
+            }
+
+            tbody {
+                
+                td {
+                    background-color: rgba(2, 119, 174, 0.050);
+                    font-family: 'Open Sans', sans-serif;
+                    color: rgba(2, 119, 174, 0.89);
+                    border-color: rgba(2, 119, 174, 0.151) !important;
+                    padding: 15px 30px;
+
+                    span {
+                        background-color: rgba(172, 255, 47, 0.274);
+                        color: green;
+                    }
+
+                    i {
+                        color: rgba(2, 119, 174, 0.89);
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

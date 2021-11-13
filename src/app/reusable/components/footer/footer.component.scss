@@ -1,0 +1,116 @@
+footer {
+    border-top: 1px solid rgb(2, 120, 174, .490);
+    overflow-x: hidden;
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+    
+            .info-footer {
+    
+    
+                div:nth-child(1) {
+    
+                    p {
+                        color: #0278ae;
+                        font-family: 'Fredoka One', cursive;
+    
+                        span {
+                            color: #e8654a;
+                        }
+                    }
+                }
+    
+                div:nth-child(2) {
+                    
+                    p {
+                        color: rgb(0, 0, 0, .780);
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                }
+            }
+    
+            .social-footer {
+
+    
+                div:nth-child(1) {
+    
+                    p {
+                        font-family: 'Fredoka One', cursive;
+                        color: #e8654a;
+                    }
+                }
+    
+                div:nth-child(2) {
+                    
+                    a {
+                        color: rgba(0, 0, 0, 0.288);
+                        cursor: pointer;
+                        transition: 0.5s;
+                    }
+    
+                    a:hover {
+                        color: #e8644abd;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+
+    .copy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            display: flex;
+
+            p, a {
+                text-align: center;
+                color: rgba(0, 0, 0, 0.521);
+                font-family: 'Open Sans', sans-serif;
+                font-size: 15px;
+            }
+        }
+
+    }
+
+    @media (max-width: 770px) {
+
+        .row {
+
+            .contenedor {
+                flex-direction: column;
+
+                .social-footer {
+                    text-align: center;
+                }
+            }
+        }
+
+        .copy {
+    
+            div {
+                flex-direction: column;
+    
+                p, a {
+                    margin-top: 10px;
+                }
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 770px) {
+    
+    footer {
+        border-top: 3px solid rgb(2, 120, 174, .490);
+    }
+}

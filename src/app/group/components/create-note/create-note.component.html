@@ -1,0 +1,67 @@
+<app-nav-v4></app-nav-v4>
+
+<div class="container py-2">
+
+    <div class="my-4 regresar text-center">
+        <a (click)="regresar()" class="hvr-icon-back"><i class="fas fa-arrow-left hvr-icon mr-2"></i>Regresar al grupo</a>
+    </div>
+
+    <div class="mt-5 mb-2 d-flex justify-content-center align-items-center">
+      
+        <div [formGroup]="formPeriodos">
+          <input formControlName="periodo" type="text" [(ngModel)]="dataMeses" placeholder="Agregar periodos">
+          <button class="btn px-4 py-3" (click)="agregarMeses()" [disabled]="formPeriodos.invalid"><i class="fas fa-plus-circle mr-2"></i>Agregar</button>
+        </div>
+
+        <div [formGroup]="formIntegrantes" class="selector">
+          <select formControlName="integrantes" [(ngModel)]="formIntegrantesValue" class="custom-select custom-select-lg pr-4 pl-3">
+            <option *ngFor="let item of users;" value="{{ item._id }}">{{ item.username }}</option>
+          </select>
+        </div>
+
+        <div [formGroup]="formAsignaturas">
+          <input formControlName="asignatura" type="text" [(ngModel)]="dataMaterias" placeholder="Agregar materias">
+          <button class="btn px-4 py-3" (click)="agregarMaterias()" [disabled]="formAsignaturas.invalid"><i class="fas fa-plus-circle mr-2"></i>Agregar</button>
+        </div>
+        
+    </div>
+
+    
+    <div class="my-4 d-flex align-items-center">
+
+      <button (click)="deleteMaterias()" class="mx-auto my-2 btn px-4 py-3 delete"><i class="fas fa-eraser mr-2"></i>Eliminar materia</button>
+
+      <div [formGroup]="formIntegrantes" class="descripcion mx-auto my-2">
+        <input formControlName="descripcion" type="text" [(ngModel)]="formDescripcionValue" placeholder="Descripción">
+      </div>
+      
+      <button (click)="deletePeriodos()" class="mx-auto my-2 btn px-4 py-3 delete"><i class="fas fa-eraser mr-2"></i>Eliminar periodo</button>
+
+    </div>
+
+
+    <div class="contenedor-tabla">
+      <table class="table table-bordered">
+  
+          <thead>
+            <tr>
+              <th scope="col">Materias</th>
+              <th *ngFor="let l of meses;" scope="col">{{ l }}</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let item of materias; index as columna;">
+              <th scope="row">{{ item.materias }}</th>
+              <td *ngFor="let j of meses; index as fila;"><input id="valorNota{{ columna }}{{ fila }}" type="text"></td>
+            </tr>
+          </tbody>
+  
+      </table>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center my-5">
+      <button [disabled]="formIntegrantes.invalid" class="btn px-5 py-3 send" (click)="guardarNota()"><i class="far fa-save mr-2"></i>Guardar Nota</button>
+    </div>
+
+</div>

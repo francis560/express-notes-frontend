@@ -1,0 +1,198 @@
+.contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .login {
+        width: 50%;
+
+
+        .return {
+            
+            a {
+                color: #0278ae;
+                font-family: 'Fredoka One', cursive;
+                text-decoration: none;
+            }
+        }
+
+        .titulo {
+            font-family: 'Fredoka One', cursive;
+            color: #0278ae;
+        }
+
+        .btn {
+            background-color: #e8654a;
+            font-family: 'Fredoka One', cursive;
+            color: #fff;
+        }
+
+        .btn:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+
+        .cards {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .opcion {
+                display: flex;
+                background-color: #e8654a;
+                border-radius: 10px;
+                width: 480px;
+                cursor: pointer;
+                outline: none;
+    
+                .bg-icon {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background-color: rgba(255, 255, 255, 0.267);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+    
+                    i {
+                        font-size: 35px;
+                        color: #fff;
+                    }
+                }
+    
+                .data-account {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    .titulo {
+
+                        p {
+                            font-size: 18px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    @media (max-width: 650px) {
+        .login {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 610px) {
+        .login {
+
+            .cards {
+
+                .opcion {
+                    width: 400px;
+                    
+                    .bg-icon {
+                        margin: auto 24px auto 0 !important;
+                        width: 80px;
+                        height: 80px;
+                        min-width: 80px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 444px) {
+        .login {
+
+            .cards {
+
+                .opcion {
+                    width: 340px;
+                    
+                    .bg-icon {
+                        margin: auto 24px auto 0 !important;
+                        width: 70px;
+                        height: 70px;
+                        min-width: 70px !important;
+                    }
+        
+                    .data-account {
+        
+                        .titulo {
+        
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hvr-grow-shadow {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform;
+    }
+    
+    .hvr-grow-shadow:hover {
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.233);
+    }
+}
+
+.modal {
+
+    .input-caja {
+        border: 2px solid rgb(2, 120, 174, .490);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+
+        input {
+            width: 100%;
+            background: transparent;
+            outline: none;
+            border: none;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+        
+        button {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            padding: 0;
+            opacity: 70%;
+            color: gray;
+        }
+    }
+
+    .send {
+        width: 100%;
+        border: none;
+        color: #fff;
+        background-color: rgb(2, 119, 174);
+        padding: 13px 24px;
+        font-family: 'Fredoka One', cursive;
+        cursor: pointer;
+    }
+}

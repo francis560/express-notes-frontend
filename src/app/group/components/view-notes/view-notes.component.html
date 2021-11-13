@@ -1,0 +1,61 @@
+<ng-container *ngIf="viewNoteVerify">
+    <div class="without-groups">
+        <div>
+            <i class="far fa-sticky-note mb-3"></i>
+            <div>
+                <p>Este grupo no tiene notas publicadas</p>
+                <p>Espera a que el profesor publique algunas notas</p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+
+<div class="container">
+
+  <ul class="list-group" *ngIf="!viewNoteVerify">
+  
+      <li *ngFor="let item of notes;" class="list-group-item d-flex flew-row mb-3 py-4" data-aos="zoom-in">
+
+          <div>
+              <i class="far fa-sticky-note"></i>
+          </div>
+
+          <div>
+              <p>{{ item.descripcion }}</p>
+              <p> Nota creada el: {{ item.createdAt | cleanDate }}</p>
+          </div>
+
+          <div>
+              <div class="dropup">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <ng-container *ngIf="permisos && idUser == adminGroup">
+                        <a (click)="editNoteShow(item._id)" class="dropdown-item"><i class="fas fa-cog mr-2"></i>Editar nota</a>
+                        <a (click)="deleteNote(item._id)" class="dropdown-item"><i class="fas fa-eraser mr-2"></i>Eliminar nota</a>
+                        <div class="dropdown-divider"></div>
+                    </ng-container>
+
+                    <a (click)="downloadNoteShow(item._id)" class="dropdown-item"><i class="fas fa-eye mr-2"></i>Ver la nota</a>
+                </div>
+              </div>
+          </div>
+
+          
+      </li>
+        
+  </ul>
+
+  <ng-container *ngIf="editNote">
+    <app-edit-notes (hide)="regresar()" [groupId]="groupId" [noteId]="noteId" class="fadeIn animated" style="position: fixed; left: 0; top: 0; width: 100%; height: 100vh; z-index: 1000; background-color: #fff; overflow-y: auto;"></app-edit-notes>
+  </ng-container>
+
+  <ng-container *ngIf="downloadNote">
+    <app-download-note (hide)="regresar()" [noteId]="noteId" class="fadeIn animated" style="position: fixed; left: 0; top: 0; width: 100%; height: 100vh; z-index: 1000; background-color: #fff; overflow-y: auto;"></app-download-note>
+  </ng-container>
+
+</div>

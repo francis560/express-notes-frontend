@@ -1,0 +1,84 @@
+<ng-container *ngIf="!recoverPasswordBoolean">
+    
+    <div class="contenedor">
+    
+        <div class="text-content">
+            
+            <div class="title mb-3">
+                <h2 class="mb-3">Recupera tu cuenta</h2>
+                <hr class="mb-4">
+                <p>Para continuar con el proceso ingrese el código que le enviamos por correo electrónico.</p>
+            </div>
+    
+            <form [formGroup]="codeForm">
+    
+                <div class="phone-field">
+                    <input [(ngModel)]="code1" id="code1" formControlName="code1" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code2" id="code2" formControlName="code2" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code3" id="code3" formControlName="code3" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code4" id="code4" formControlName="code4" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code5" id="code5" formControlName="code5" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code6" id="code6" formControlName="code6" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code7" id="code7" formControlName="code7" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                    <input [(ngModel)]="code8" id="code8" formControlName="code8" class="phone-input" name="phone-input" type="tel" size="1" maxlength="1" placeholder="0" autocomplete="off">
+                </div>
+            
+                <hr class="mt-4">
+        
+                <div class="action mt-4">
+                    <button class="btn px-4 py-2" type="submit" [disabled]="codeForm.invalid" (click)="show(codeForm.value)">Enviar</button>
+                    <button class="btn px-4 py-2 mr-3" routerLink="/signin">Cancelar</button>
+                </div>
+                
+            </form>
+    
+    
+        </div>
+        
+    
+    </div>
+
+</ng-container>
+
+
+<ng-container *ngIf="recoverPasswordBoolean">
+
+    <div class="contenedor fadeIn animated">
+    
+        <div class="text-content">
+            
+            <div class="title mb-3">
+                <h2 class="mb-3">Ingresa tu nueva contraseña</h2>
+                <hr class="mb-4">
+            </div>
+    
+            <form [formGroup]="recoverPassword" (ngSubmit)="updatePassword(recoverPassword.value)">
+    
+                <div class="input-caja">
+                    <input type="password" formControlName="password" name="password" autocomplete="off" id="password" placeholder="Contraseña">
+                    <button type="button" (click)="viewPassword()"><i [ngClass]="eyeIcon"></i></button>
+                </div>
+
+                <div class="err" style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: 8px; font-size: 14px;" *ngIf="recoverPassword.get('password')?.errors && recoverPassword.get('password')?.touched">
+
+                    <p *ngIf="recoverPassword.get('password')?.hasError('required')"><i class="fas fa-exclamation mr-2"></i>La contraseña es un campo requerido.</p>
+                    <p *ngIf="recoverPassword.get('password')?.hasError('minlength')"><i class="fas fa-exclamation mr-2"></i>La contraseña no puede tener menos de 6 caracteres.</p>
+                    <p *ngIf="recoverPassword.get('password')?.hasError('maxlength')"><i class="fas fa-exclamation mr-2"></i>La contraseña no puede tener mas de 20 caracteres.</p>
+
+                </div>
+
+                <hr class="mt-4">
+
+                <div class="action mt-4">
+                    <button type="submit" [disabled]="recoverPassword.invalid" class="send btn px-4 py-2 mt-3">Enviar</button>
+                    <button class="btn px-4 py-2 mt-3 mr-3" routerLink="/signin">Cancelar</button>
+                </div>
+                
+            </form>
+    
+        </div>
+        
+    
+    </div>
+
+</ng-container>

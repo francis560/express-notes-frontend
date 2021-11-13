@@ -1,0 +1,75 @@
+.contenedor {
+
+    nav {
+        background-color: #fff;
+        border-bottom: 2px solid rgb(2, 120, 174, .490);
+    
+        a {
+            color: #e8654a;
+            font-family: 'Fredoka One', cursive;
+    
+            span {
+                color: #0278ae;
+            }
+        }
+    
+        div {
+    
+            a {
+                color: #393e46da;
+                font-size: 22px;
+                margin: 0 15px;
+                padding: 0;
+            }
+        
+            .active {
+                color: #e8654a;
+            }
+        }
+    
+    }
+    
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-top: 2px solid rgb(2, 120, 174, .490);
+
+        div {
+            display: flex;
+            flex-direction: row;
+            
+            a, div {
+                margin: auto auto;
+                font-size: 22px;
+                color: #393e46da;
+            }
+
+            div {
+                transform: translateY(-25px);
+                width: 65px;
+                height: 65px;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                border-radius: 100%;
+                background-color: #0278ae;
+
+                a {
+                    color: #fff;
+                    margin: auto 0;
+                    font-size: 22px;
+                }
+            }
+
+            .active {
+                color: #e8654a;
+            }
+        }
+    
+        @media (max-width: 991px) {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.chat-contenedor {
+    position: relative;
+    height: 100%;
+
+    .group-name {
+        background-color: rgba(2, 119, 174, 0.11);
+        border-start-start-radius: 12px;
+        border-start-end-radius: 12px;
+        backdrop-filter: blur( 8.5px );
+        box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.103);
+        -webkit-backdrop-filter: blur( 8.5px );
+
+        p {
+            font-family: 'Fredoka One', cursive;
+            color: #0277aeb6;
+            font-size: 18px;
+            padding: 15px;
+
+        }
+    }
+
+    .caja {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .input-caja {
+            position: absolute;
+            bottom: 3%;
+            background-color: #fff;
+            padding: 6px;
+            border-radius: 10px;
+            width: 90%;
+            box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.103);
+            display: flex;
+            justify-content: space-around;
+        
+            input {
+                border: none;
+                background-color: transparent;
+                font-family: 'Open Sans', sans-serif;
+                outline: none;
+                color: rgba(128, 128, 128, 0.932);
+            }
+
+            input::placeholder {
+                color: rgba(128, 128, 128, 0.521);
+            }
+        
+            button {
+                border: none;
+                background-color: transparent;
+                border-radius: 10px;
+                padding: 7px 12px;
+                color: #0277aec4;
+                transition: 0.5s;
+                outline: none;
+            }
+            
+            button:hover {
+                transition: 0.5s;
+                background-color: rgba(2, 119, 174, 0.11);
+            }
+        }
+    }
+}

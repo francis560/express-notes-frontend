@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap');
+
+.d-flex {
+    height: 100vh;
+
+    .textos {
+        transform: translateY(-90px);
+        text-align: center;
+
+        div:nth-child(1) {
+            
+            p {
+                color: #0278ae;
+                font-weight: 800;
+                font-family: 'Open Sans', sans-serif;
+                margin: 0 0 10px;
+            }
+        }
+
+        div:nth-child(2) {
+
+            
+            p {
+                font-weight: 600 ;
+                color: rgba(57, 62, 70, 0.699);
+                font-family: 'Open Sans', sans-serif;
+                margin: 0 0 30px;
+            }
+        }
+
+        div:nth-child(3) {
+            
+            a {
+                color: #fff;
+                background-color: #e8654a;
+                font-family: 'Fredoka One', cursive;
+            }
+        }
+    }
+
+
+    @media (max-height: 1387px) {
+
+        .textos {
+            transform: translateY(-360px);
+    
+            div:nth-child(1) {
+                
+                p {
+                    font-size: 18px;
+                }
+            }
+    
+            div:nth-child(2) {
+    
+                
+                p {
+                    font-size: 20px;
+                }
+            }
+    
+            div:nth-child(3) {
+                
+                a {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    @media (max-height: 1200px) {
+
+        .textos {
+            transform: translateY(-280px);
+        }
+    }
+
+    @media (max-height: 1050px) {
+
+        .textos {
+            transform: translateY(-170px);
+        }
+    }
+
+    @media (max-height: 830px) {
+
+        .textos {
+            transform: translateY(-80px);
+        }
+    }
+
+    @media (max-height: 630px) {
+
+        .textos {
+            transform: translateY(-40px);
+        }
+    }
+
+    @media (max-width: 744px) {
+        .my-auto {
+            font-size: 150px !important;
+        }
+
+        video {
+            width: 140px;
+            height: 140px;
+        }
+        
+        .textos {
+            transform: translateY(-140px);
+    
+            div:nth-child(1) {
+                
+                p {
+                    font-size: 14px;
+                }
+            }
+    
+            div:nth-child(2) {
+    
+                
+                p {
+                    font-size: 14px;
+                }
+            }
+    
+            div:nth-child(3) {
+                
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 444px) {
+        .my-auto {
+            font-size: 110px !important;
+        }
+
+        video {
+            width: 110px;
+            height: 110px;
+        }
+    }
+}

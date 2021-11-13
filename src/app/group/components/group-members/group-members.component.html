@@ -1,0 +1,22 @@
+<div class="container">
+
+    <ul class="list-group">
+    
+        <li *ngFor="let item of users; index as i;" class="list-group-item d-flex flew-row mb-3 py-4" data-aos="zoom-in">
+
+            <div>
+                <img width="40px" *ngIf="item.permisos == true && item.iconProfile == ' ' " src="{{ currentIconProfileTeacher }}" />
+                <img width="40px" *ngIf="item.permisos == false && item.iconProfile == ' ' " src="{{ currentIconProfileStudent }}" />
+                <img width="40px" *ngIf="item.iconProfile !== ' ' " src="{{ item.iconProfile }}" />
+            </div>
+
+            <div>
+                <p>{{ item.username }}</p>
+                <p>{{ item.email }}</p>
+            </div>
+
+        </li>
+    
+    </ul>
+
+</div>

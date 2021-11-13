@@ -1,0 +1,200 @@
+<app-nav-v4 [darkMode_bg]="darkMode_bg"></app-nav-v4>
+
+<div class="contenedor animated fadeIn" [ngClass]="darkMode_bg2">
+
+    <div class="login">
+        <div class="p-4">
+            <div>
+                <div class="mb-4 return text-center">
+                    <a routerLink="/" class="hvr-icon-back"><i class="fas fa-arrow-left hvr-icon mr-2"></i>Volver a la pantalla principal</a>
+                </div>
+                <div class="text-center">
+                    <h4 class="titulo my-4">Editar detalles de la cuenta.</h4>
+                </div>
+                <div class="cards">
+
+
+                    <!-- <div class="opcion p-4 mb-4" style="cursor: default !important;">
+                        <div class="mr-3 d-flex align-items-center justify-content-center" style="background-color: rgba(255, 255, 255, 0.267); width: 40px; height: 40px; border-radius: 50%;">
+                            <button style="border: none; outline: none; background-color: transparent; font-size: 20px; color: #fff;" (click)="darkMode()"><i [ngClass]="modeIcon"></i></button>
+                        </div>
+
+                        <div class="data-account">
+                            <div class="titulo">
+                                <p class="my-auto">Activar modo {{ mode }} (beta)</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="opcion p-4 mb-4" data-toggle="modal" data-target="#updateAccountName">
+                        <div class="bg-icon mr-4">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div class="data-account">
+                            <div class="titulo">
+                                <p>Editar el nombre de usuario</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="opcion p-4 mb-4" data-toggle="modal" data-target="#updateAccountEmail">
+                        <div class="bg-icon mr-4">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="data-account">
+                            <div class="titulo">
+                                <p>Editar el correo electrónico</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="opcion p-4 mb-4" data-toggle="modal" data-target="#updateAccountPassword">
+                        <div class="bg-icon mr-4">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="data-account">
+                            <div class="titulo">
+                                <p>Editar la contraseña</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="opcion p-4 mb-4">
+                        <div class="bg-icon mr-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="data-account">
+                            <div class="titulo">
+                                <p>Agregar numero de telefono</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="opcion p-4 mb-4" routerLink="/privacyPolicy">
+                        <div class="bg-icon mr-4">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="data-account">
+                            <div class="titulo">
+                                <p>Política de privacidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" id="updateAccountName" tabindex="-1" aria-labelledby="updateAccountName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" [ngClass]="darkMode_bg">
+        <div class="modal-body my-4">
+          <div class="text-center">
+              <h2 [ngClass]="darkMode_txt" style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Cambiar nombre de usuario</h2>
+          </div>
+          <div class="mt-5 px-4">
+              <div>
+                  <div class="d-flex justify-content-center align-items-center">
+                    
+                    <form [formGroup]="editAccountName" (ngSubmit)="updateProfile({data: editAccountName.value, password: '', username: '', email: '', num2: 1})">
+
+                        <div class="input-caja">
+                            <input [ngClass]="darkMode_txt" type="text" [(ngModel)]="username" formControlName="username" name="username" autocomplete="off" id="" placeholder="Nombre">
+                        </div>
+
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: 8px; font-size: 14px;" *ngIf="editAccountName.get('username')?.errors && editAccountName.get('username')?.touched">
+
+                            <p *ngIf="editAccountName.get('username')?.hasError('required')"><i class="fas fa-exclamation mr-2"></i>El nombre es un campo requerido.</p>
+                            <p *ngIf="editAccountName.get('username')?.hasError('minlength')"><i class="fas fa-exclamation mr-2"></i>El nombre no puede tener menos de 4 caracteres.</p>
+                            <p *ngIf="editAccountName.get('username')?.hasError('maxlength')"><i class="fas fa-exclamation mr-2"></i>El nombre no puede tener mas de 15 caracteres.</p>
+
+                        </div>
+                        
+                        <button type="submit" [disabled]="editAccountName.invalid" class="send btn px-4 mt-3"><i class="fas fa-paper-plane mr-2"></i>Actualizar nombre</button>
+                    </form>
+
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="updateAccountEmail" tabindex="-1" aria-labelledby="updateAccountEmail" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" [ngClass]="darkMode_bg">
+        <div class="modal-body my-4">
+          <div class="text-center">
+              <h2 [ngClass]="darkMode_txt" style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Cambiar correo electrónico</h2>
+          </div>
+          <div class="mt-5 px-4">
+              <div>
+                  <div class="d-flex justify-content-center align-items-center">
+                    
+                    <form [formGroup]="editAccountEmail" (ngSubmit)="updateProfile({email: editAccountEmail.value, password: '', num2: 1})">
+
+                        <div class="input-caja">    
+                            <input [ngClass]="darkMode_txt" type="text" [(ngModel)]="email" formControlName="email" name="email" autocomplete="off" id="" placeholder="Correo electrónico">
+                        </div>
+
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: 8px; font-size: 14px;" *ngIf="editAccountEmail.get('email')?.errors && editAccountEmail.get('email')?.touched">
+
+                            <p *ngIf="editAccountEmail.get('email')?.hasError('required')"><i class="fas fa-exclamation mr-2"></i>El email es un campo requerido.</p>
+                            <p *ngIf="editAccountEmail.get('email')?.hasError('email')"><i class="fas fa-exclamation mr-2"></i>Este no es un email valido.</p>
+
+                        </div>
+                        
+                        <button type="submit" [disabled]="editAccountEmail.invalid" class="send btn px-4 mt-3"><i class="fas fa-paper-plane mr-2"></i>Actualizar correo</button>
+                    </form>
+
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="updateAccountPassword" tabindex="-1" aria-labelledby="updateAccountPassword" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" [ngClass]="darkMode_bg">
+        <div class="modal-body my-4">
+          <div class="text-center">
+              <h2 [ngClass]="darkMode_txt" style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Cambiar la contraseña</h2>
+          </div>
+          <div class="mt-5 px-4">
+              <div>
+                  <div class="d-flex justify-content-center align-items-center">
+                    
+                    <form [formGroup]="editAccountPassword" (ngSubmit)="updateProfile({data: editAccountPassword.value, email: '', username: '', num: 1})">
+
+                        <div class="input-caja">
+                            <input [ngClass]="darkMode_txt" type="password" [(ngModel)]="password" formControlName="password" name="password" autocomplete="off" id="password" placeholder="Contraseña">
+                            <button [ngClass]="darkMode_txt" type="button" (click)="viewPassword()"><i [ngClass]="eyeIcon"></i></button>
+                        </div>
+
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: 8px; font-size: 14px;" *ngIf="editAccountPassword.get('password')?.errors && editAccountPassword.get('password')?.touched">
+
+                            <p *ngIf="editAccountPassword.get('password')?.hasError('required')"><i class="fas fa-exclamation mr-2"></i>La contraseña es un campo requerido.</p>
+                            <p *ngIf="editAccountPassword.get('password')?.hasError('minlength')"><i class="fas fa-exclamation mr-2"></i>La contraseña no puede tener menos de 6 caracteres.</p>
+                            <p *ngIf="editAccountPassword.get('password')?.hasError('maxlength')"><i class="fas fa-exclamation mr-2"></i>La contraseña no puede tener mas de 20 caracteres.</p>
+
+                        </div>
+                        
+                        <button type="submit" [disabled]="editAccountPassword.invalid" class="send btn px-4 mt-3"><i class="fas fa-paper-plane mr-2"></i>Actualizar contraseña</button>
+                    </form>
+
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

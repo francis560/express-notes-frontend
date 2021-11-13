@@ -1,0 +1,159 @@
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+
+// clases de sweetalert
+
+.swal2-actions {
+    justify-content: flex-end !important;
+}
+
+.swal2-input-label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.swal2-title {
+    font-family: 'Fredoka One', cursive !important;
+    font-weight: 100 !important;
+}
+
+.swal2-confirm, .swal2-cancel, .swal2-deny {
+    font-family: 'Fredoka One', cursive !important;
+    font-weight: 200 !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.swal2-confirm {
+    background-color: #0278ae !important;
+}
+
+.swal2-cancel, .swal2-deny {
+    background-color: rgb(232, 101, 74, .300) !important;
+    color: #e8654a !important;
+}
+
+.swal2-cancel:hover, .swal2-cancel:active, .swal2-deny:hover, .swal2-deny:active {
+    background-color: rgb(232, 100, 74) !important;
+    color: #fff !important;
+}
+
+
+
+.swal2-input {
+    outline: none !important;
+    font-family: 'Open Sans', sans-serif !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.swal2-content, .swal2-footer {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 436px) {
+    .swal2-actions {
+        justify-content: center !important;
+    }
+}
+
+.hvr-icon-back {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+.hvr-icon-back .hvr-icon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-icon-back:hover .hvr-icon, .hvr-icon-back:focus .hvr-icon, .hvr-icon-back:active .hvr-icon {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+}
+
+.dark-mode-bg {
+    background-color: #121A21 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.dark-mode-txt {
+    color: #c8cdd0 !important;
+    border-color: #c8cdd0 !important;
+}
+
+.dropdown-item:hover {
+    background-color: #c8cdd01e !important;
+}
+
+.dark-mode-bg2 {
+    background-color: #192229 !important;
+}
+
+
+//estilos de la DataTable
+
+.dataTables_length {
+    display: none;
+}
+
+.dataTables_filter {
+
+    label {
+        font-family: 'Fredoka One', cursive;
+        color: #0278ae;
+
+        input {
+            outline: none;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px 14px !important;
+            border: 2px solid rgba(2, 120, 174, 0.49) !important;
+            border-radius: 5px !important;
+        }
+    }
+}
+
+.dataTables_info {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(2, 119, 174, 0.719) !important;
+}
+
+.dataTables_paginate {
+    display: none;
+}
+// .dataTables_wrapper {
+    
+//     a {
+//         color: red !important;
+//     }
+// }

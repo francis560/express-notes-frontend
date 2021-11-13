@@ -1,0 +1,20 @@
+<div class="contenedor">
+
+    <div class="video-container">
+        <video [srcObject]="stream" autoplay *ngIf="stream"></video>
+        <app-video-call-menu></app-video-call-menu>
+
+        <div class="list-users-connected" *ngIf="listStream">
+
+            <div class="users-connected" *ngFor="let item of listStream">
+                <video [srcObject]="item" autoplay></video>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <app-video-call-chat></app-video-call-chat>
+    </div>
+
+</div>

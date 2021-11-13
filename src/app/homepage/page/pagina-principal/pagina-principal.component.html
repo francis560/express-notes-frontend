@@ -1,0 +1,75 @@
+<div class="splash-screen" [ngStyle]="{'display': showSplashScreen}">
+    <div>
+        <p class="logo">Express <span>Notes</span></p>
+        
+        <div class="looping-rhombuses-spinner">
+            <div class="rhombus"></div>
+            <div class="rhombus"></div>
+            <div class="rhombus"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<app-nav-v3 [permisos]="permisos" [_id]="_id" [iconUser]="iconUser"></app-nav-v3>
+
+<ng-container *ngIf="groupVerify2">
+    <div class="without-groups" [ngClass]="darkMode_bg2">
+        <div>
+            <i class="far fa-clipboard mb-3" [ngClass]="darkMode_txt"></i>
+            <div>
+                <p [ngClass]="darkMode_txt">Todavía no estás en ningún grupo</p>
+                <p [ngClass]="darkMode_txt">Únase a un grupo para ver sus notas</p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<div *ngIf="groupVerify" class="row row-cols-12 contenedor" style="max-width: 100vw;" [ngClass]="darkMode_bg2">
+
+    <div *ngFor="let item of groupsData" [ngClass]="cambiarColor(item.codigo)" class="carta col-sm-12 col-md-5 col-lg-3 your-element">
+        <div class="card-header p-3 d-flex">
+            
+            <div class="dropleft">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a (click)="groupJoin(item.codigo)" class="dropdown-item"><i class="fas fa-door-open mr-2"></i>Entrar al grupo</a>
+                    
+                    <ng-container *ngIf="permisos && item.adminGroup == _id">
+                        <a (click)="editGroup(item._id)" class="dropdown-item"><i class="fas fa-cog mr-2"></i>Editar grupo</a>
+                        <a (click)="deleteGroup(item._id)" class="dropdown-item"><i class="fas fa-eraser mr-2"></i>Eliminar grupo</a>
+                    </ng-container>
+
+                    <div class="dropdown-divider"></div>
+                    <a (click)="exitGroup(item._id)" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Salir del grupo</a>
+                </div>
+            </div>
+
+            <div style="color: #fff; font-family: 'Fredoka One', cursive;">
+                <span class="card-text"><i class="fas fa-users"></i> {{ item.integrantes | countUsers }}</span>
+            </div>
+
+        </div>
+
+        <div class="card-body">
+
+            <h3 class="card-title mb-4">{{ item.name }}</h3>
+            <!-- <p><a data-toggle="collapse" href="#materias{{ item._id }}" role="button" aria-expanded="false" [attr.aria-controls]="'materias' + item._id">Materias <i class="fas fa-caret-down"></i></a></p>
+            
+
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="collapse" id="materias{{ item._id }}">
+                      <div>{{ item.materias }}</div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+</div>

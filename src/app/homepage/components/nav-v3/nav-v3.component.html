@@ -1,0 +1,126 @@
+<nav class="navbar sticky-top navbar-expand-lg py-3 px-4" [ngClass]="darkMode_bg">
+    <a class="navbar-brand" href="">Express <span>Notes</span></a>
+    <div id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <div class="dropdown d-flex">
+
+                <button class="mr-3 py-2 px-2 d-flex select-avatar" style="background-color: #c9e8f78a; border-radius: 25%;" data-toggle="modal" data-target="#iconProfile">
+
+                    <img width="25px" *ngIf="permisos && iconUser == ' ' " src="{{ currentIconProfileTeacher }}" />
+                    <img width="25px" *ngIf="!permisos && iconUser == ' ' " src="{{ currentIconProfileStudent }}" />
+                    <img width="25px" *ngIf="iconUser !== ' ' " src="{{ iconUser }}" />
+                    
+                </button>
+
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" [ngClass]="darkMode_bg" style="position: absolute;">
+                    
+                    <a (click)="groupJoin()" class="dropdown-item" [ngClass]="darkMode_txt"><i class="fas fa-sign-in-alt mr-2"></i>Entra a un grupo</a>
+                    
+                    <ng-container *ngIf="permisos">
+                        <a (click)="groupCreate()" class="dropdown-item" [ngClass]="darkMode_txt"><i class="far fa-plus-square mr-2"></i>Crear grupo</a>
+                    </ng-container>
+
+                    <a (click)="editAccount()" class="dropdown-item" [ngClass]="darkMode_txt"><i class="fas fa-sliders-h mr-2"></i>Configuración</a>
+                    
+                    <div class="dropdown-divider" [ngClass]="darkMode_txt"></div>
+                    <a class="dropdown-item" (click)="cerrarSesion()" [ngClass]="darkMode_txt"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar sesión</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- <div class="modal fade" id="iconProfile" tabindex="-1" aria-labelledby="bgColorGroup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" [ngClass]="darkMode_bg">
+        <div class="modal-body my-4">
+          <div class="text-center">
+            <h2 style="font-size: 80px; color: rgb(74, 182, 232, .450);">
+
+                <i *ngIf="permisos && iconUser == ' ' " [ngClass]="currentIconProfileTeacher"></i>
+                <i *ngIf="!permisos && iconUser == ' ' " [ngClass]="currentIconProfileStudent"></i>
+                <i *ngIf="iconUser !== ' ' " [ngClass]="iconUser"></i>
+                
+            </h2>
+          </div>
+          <div class="mt-4 px-4">
+              <div class="d-flex justify-content-center align-items-center flex-column" [ngClass]="darkMode_txt">
+                  
+                  <div *ngIf="permisos">
+                    <p style="font-size: 16px; font-family: 'Open Sans', sans-serif;">Iconos de profesor</p>
+                  </div>
+                  <div *ngIf="permisos" class="d-flex p-2" style="overflow-x: auto; width: 100%; background-color: rgba(89, 89, 89, 0.050);">
+                      <button class="mx-2" (click)="iconProfile(item.icon)" style="border: none; color: #595959; background-color: transparent; outline: none; font-size: 30px;" *ngFor="let item of iconProfileTeacher;"><i [ngClass]="item.icon"></i></button>
+                  </div>
+                  
+                  <div class="mt-2">
+                        <p style="font-size: 16px; font-family: 'Open Sans', sans-serif;">Animales</p>
+                  </div>
+                  <div class="d-flex p-2" style="overflow-x: auto; width: 100%; background-color: rgba(89, 89, 89, 0.050);">
+                        <button class="mx-2" (click)="iconProfile(l.icon)" style="border: none; color: #595959; background-color: transparent; outline: none; font-size: 25px;" *ngFor="let l of iconProfileAnimal;"><i [ngClass]="l.icon"></i></button>
+                  </div>
+
+                  <div class="mt-2">
+                      <p style="font-size: 16px; font-family: 'Open Sans', sans-serif;">Iconos variados</p>
+                  </div>
+                  <div class="d-flex p-2" style="overflow-x: auto; width: 100%; background-color: rgba(89, 89, 89, 0.050);">
+                        <button class="mx-2" (click)="iconProfile(j.icon)" style="border: none; color: #595959; background-color: transparent; outline: none; font-size: 25px;" *ngFor="let j of iconProfileVaried;"><i [ngClass]="j.icon"></i></button>
+                  </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<div class="modal fade" id="iconProfile" tabindex="-1" aria-labelledby="bgColorGroup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" [ngClass]="darkMode_bg">
+        <div class="modal-body">
+
+          <div class="avatar-view">
+            
+            <img width="90px" *ngIf="permisos && iconUser == ' ' " src="{{ currentIconProfileTeacher }}" />
+            <img width="90px" *ngIf="!permisos && iconUser == ' ' " src="{{ currentIconProfileStudent }}" />
+            <img width="90px" *ngIf="iconUser !== ' ' " src="{{ iconUser }}" />
+
+          </div>
+
+          <div class="mt-4">
+
+              <div class="selector">
+                
+                <ng-container *ngFor="let j of iconAvatar">
+                  <button style="background-color: transparent; border: none; outline: none;" (click)="iconProfile(j.icon)"> <img loading="lazy" width="40px" [src]="j.icon" /> </button>
+                </ng-container>
+              
+              </div>
+
+              <div class="selector">
+                
+                <ng-container *ngFor="let j of iconAvatar2">
+                  <button style="background-color: transparent; border: none; outline: none;" (click)="iconProfile(j.icon)"> <img loading="lazy" width="40px" [src]="j.icon" /> </button>
+                </ng-container>
+              
+              </div>
+
+              <div class="selector">
+                
+                <ng-container *ngFor="let j of iconAvatar3">
+                  <button style="background-color: transparent; border: none; outline: none;" (click)="iconProfile(j.icon)"> <img loading="lazy" width="40px" [src]="j.icon" /> </button>
+                </ng-container>
+              
+              </div>
+
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+.contenedor {
+    padding: 48px 100px;
+
+    .d-flex {
+        width: 100%;
+        
+        .header {
+            width: 100%;
+            border-radius: 10px;
+            background: #e8654a;
+            box-shadow: 0 3px 18px 0 rgba(31, 38, 135, 0.347);
+
+            .d-flex {
+                justify-content: space-between;
+
+                .titulo {
+                    font-family: 'Fredoka One', cursive;
+                    color: #fff;
+                    font-size: 50px;
+                }
+                
+                .dropleft {
+
+                    button {
+                        border: none;
+                        background-color: transparent;
+                        outline: none;
+                        color: #fff;
+                    }
+
+                    .dropdown-menu {
+                        border-radius: 10px;
+                        background: rgba(255, 255, 255, 0.990);
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.103);
+                        backdrop-filter: blur( 8.5px );
+                        -webkit-backdrop-filter: blur( 8.5px );
+                        border: none;
+                        border-radius: 5px;
+            
+                        .dropdown-item {
+                            font-family: 'Open Sans', sans-serif;
+                            cursor: pointer;
+                            color: #393e46;
+                        }  
+                        
+                        .dropdown-item:active {
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .materias {
+
+                    span {
+                        color: #fff;
+                    }
+
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        color: rgba(255, 255, 255, 0.884);
+                    }
+                }
+            }
+
+            .group-code {
+
+                button {
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    font-family: 'Open Sans', sans-serif;
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+
+        .group-nav {
+            width: 100%;
+            border: 2px solid rgb(2, 120, 174, .490);
+            border-radius: 8px;
+            box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.347);
+
+            div {
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 18px 28px;
+                    font-family: 'Fredoka One', cursive;
+                    color: rgba(57, 62, 70, 0.514)
+                }
+
+                button:hover {
+                    color: #0277ae;
+                }
+                
+                .active {
+                    color: #0277ae;
+                }
+            }
+        }
+
+        @media (max-width: 688px) {
+            .header {
+                padding: 24px 38px !important;
+
+                .d-flex {
+
+                    .titulo {
+                        font-size: 33px;
+                    }
+
+                    .materias {
+                        font-size: 14px;
+                    }
+                }
+
+                .group-code {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        @media (max-width: 460px) {
+            .header {
+                padding: 24px 28px !important;
+
+                .d-flex {
+
+                    .titulo {
+                        font-size: 28px;
+                    }
+
+                    .materias {
+                        font-size: 14px;
+                    }
+                }
+
+                .group-code {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .colorUno {
+            background: #0278ae !important;
+        }
+        
+        .colorDos {
+            background-color: #e8654a !important;
+        }
+
+        .degradadoUno {
+            background: #264653;
+            background: -webkit-linear-gradient(to right, #264653 ,#1d607b);
+            background: linear-gradient(to right, #264653 ,#1d607b);
+        }
+
+        .degradadoDos {
+            background: #2a9d8f;
+            background: -webkit-linear-gradient(to right, #2a9d8f ,#05d6bd);
+            background: linear-gradient(to right, #2a9d8f ,#05d6bd);
+        }
+
+        .degradadoTres {
+            background: #011627;
+            background: -webkit-linear-gradient(to right, #011627 ,#034072);
+            background: linear-gradient(to right, #011627 ,#034072);
+        }
+
+        .degradadoCuatro {
+            background: #e71d36;
+            background: -webkit-linear-gradient(to right, #e71d36 ,#f86073);
+            background: linear-gradient(to right, #e71d36 ,#f86073);
+        }
+
+        .degradadoCinco {
+            background: #ff9f1c;
+            background: -webkit-linear-gradient(to right, #ff9f1c ,#fbc071);
+            background: linear-gradient(to right, #ff9f1c ,#fbc071);
+        }
+
+        .degradadoSeis {
+            background: #42a1dc;
+            background: -webkit-linear-gradient(to right, #42a1dc ,#b8c0ff);
+            background: linear-gradient(to right, #42a1dc ,#b8c0ff);
+        }
+
+        .degradadoSiete {
+            background: #5151c6;
+            background: -webkit-linear-gradient(to right, #5151c6 ,#888bf4);
+            background: linear-gradient(to right, #5151c6 ,#888bf4);
+        }
+
+        .degradadoOcho {
+            background: #311010;
+            background: -webkit-linear-gradient(to right, #311010 ,#562c2c);
+            background: linear-gradient(to right, #311010 ,#562c2c);
+        }
+
+        .degradadoNueve {
+            background: #de2c00;
+            background: -webkit-linear-gradient(to right, #de2c00 ,#f2542d);
+            background: linear-gradient(to right, #de2c00 ,#f2542d);
+        }
+
+        .degradadoDiez {
+            background: #064e4e;
+            background: -webkit-linear-gradient(to right, #064e4e ,#127475);
+            background: linear-gradient(to right, #064e4e ,#127475);
+        }
+
+    }
+
+    .co-profesor {
+
+        
+        .profesor-card {
+
+            button {
+                color: #0278ae;
+                font-family: 'Fredoka One', cursive;
+            }
+
+            button:hover {
+                background-color: rgba(74, 182, 232, 0.3);
+            }
+        }
+    }
+
+    .inviteMembers {
+
+        .inviteCode {
+            overflow-x: auto;
+            font-family: 'Open Sans', sans-serif;
+            background-color: rgba(89, 89, 89, 0.050);
+        }
+    }
+
+}
+
+@media (max-width: 880px) {
+    .contenedor {
+        padding: 48px 40px;
+    }
+}
+
+@media (max-width: 540px) {
+    .contenedor {
+        padding: 48px 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenedor {
+        padding: 48px 15px;
+    }
+}

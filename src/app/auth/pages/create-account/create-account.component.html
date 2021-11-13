@@ -1,0 +1,49 @@
+<app-nav-v2></app-nav-v2>
+
+<section class="animated fadeIn" [ngClass]="darkMode_bg2">
+
+    <div class="contenedor p-3 row row-cols-12">
+
+        <div class="mb-4">
+            <a routerLink="/home" class="hvr-icon-back"><i class="fas fa-arrow-left hvr-icon mr-2"></i>Volver a la pantalla principal</a>
+        </div>
+
+        <div class="select">
+            <p>Seleccione su tipo de cuenta</p>
+        </div>
+
+        <div class="opcion-1 p-4 mb-4" (click)="teacherAccount()">
+            <div class="teacher-icon mr-4">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="data-account">
+                <div class="titulo">
+                    <p>Cuenta de maestro</p>
+                </div>
+                <div class="descripcion">
+                    <p>Para profesores y coprofesores.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="opcion-2 p-4" (click)="studentAccount()">
+            <div class="student-icon mr-4">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="data-account">
+                <div class="titulo">
+                    <p>Cuenta de estudiante</p>
+                </div>
+                <div class="descripcion">
+                    <p>Para estudiantes y participantes de la clase.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-3 p-3">
+            <a routerLink="/signin" style="font-size: 15px; color: #0278ae; font-family: 'Fredoka One', cursive;">¿Ya tienes una cuenta de <span style="color: #e8654a;">Express Notes</span>? Iniciar sesión</a>
+        </div>
+
+    </div>
+
+</section>

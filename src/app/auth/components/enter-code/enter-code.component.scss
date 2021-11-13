@@ -1,0 +1,143 @@
+.contenedor {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+
+    .text-content {
+        width: 60%;
+
+        .title {
+            font-family: 'Fredoka One', cursive;
+            color: #0278ae;
+        }
+
+        .phone-field {
+            margin: 50px;
+            font-size: 20px;
+            text-align: center;
+
+            .phone-input {
+                width: 30px;
+                text-align: center;
+                font-size: 20px !important;
+                height: 1.75em;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                border-bottom: 4px solid #e8644ae1;
+                margin-right: 12px;
+                margin-left: 12px;
+            }
+              
+            [placeholder]:focus::-webkit-input-placeholder {
+              transition: opacity 0.5s 0.0s ease;
+              opacity: 0;
+            }
+
+            .phone-input::placeholder {
+                color: rgba(128, 128, 128, 0.418);
+            }
+        }
+
+        p {
+            color: rgba(0, 0, 0, 0.78);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .input-caja {
+            border: 2px solid rgb(2, 120, 174, .490);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+    
+            input {
+                width: 100%;
+                background: transparent;
+                outline: none;
+                border: none;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+            }
+    
+            input:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 30px white inset;
+            }
+            
+            button {
+                border: none;
+                background-color: transparent;
+                outline: none;
+                padding: 0;
+                opacity: 70%;
+                color: gray;
+            }
+        }
+        
+        .err {
+            color: #ff0000;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .send {
+            //width: 100%;
+            border: none;
+            color: #fff;
+            background-color: rgb(2, 119, 174);
+            font-family: 'Fredoka One', cursive;
+            cursor: pointer;
+        }
+
+    }
+
+    @media (max-width: 901px) {
+        .text-content {
+            width: 70% !important;
+
+            .phone-field {
+                margin:  50px 0;
+            }
+        }
+    }
+
+    @media (max-width: 625px) {
+        .text-content {
+            width: 80% !important;
+
+            .phone-field {
+                margin: 40px 0;
+    
+                .phone-input {
+                    width: 25px;
+                    font-size: 18px !important;
+                    border-bottom: 3px solid #e8644ae1;
+                    margin-right: 11px;
+                    margin-left: 11px;
+                }
+            }   
+        }
+    }
+
+    .action {
+        font-family: 'Fredoka One', cursive;
+
+        button {
+            float: right;
+            border: none;
+        }
+
+        button:nth-child(1) {
+            color: #fff;
+            background-color: #0278ae;
+        }
+
+        button:nth-child(2) {
+            color: #e8654a;
+            background-color: rgb(232, 101, 74, .300);
+        }
+
+    }
+
+}

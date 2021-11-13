@@ -1,0 +1,64 @@
+.container {
+    
+    .regresar {
+    
+        a {
+            color: #0278ae;
+            font-family: 'Fredoka One', cursive;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    
+    .contenedor-tabla {
+        overflow-x: auto;
+    
+        table {
+            
+        
+            thead {
+                background-color: #e8654a;
+                color: #fff;
+        
+                tr {
+                    text-align: center;
+                }
+            }
+        
+            tbody {
+        
+                tr {
+                    text-align: center;
+                
+                    td {
+                
+                        input {
+                            border: none;
+                            outline: none;
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+    
+    .my-5 {
+    
+        .send {
+            color: #0278ae;
+            background-color: rgba(74, 182, 232, 0.3);
+            font-family: 'Fredoka One', cursive;
+            transition: 0.5s;
+        }
+    
+        .send:hover {
+            color: #fff;
+            background-color: #0278ae;
+            transition: 0.5s;
+            transform: scale(1.1);
+        }
+    }
+}
